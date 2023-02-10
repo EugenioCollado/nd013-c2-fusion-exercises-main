@@ -38,18 +38,18 @@ from misc.helpers import load_object_from_file
 
 # add exercise directories to python path to enable relative imports
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
-EXE_L1 = 'lesson-1-lidar-sensor/exercises/starter'
-EXA_L1 = 'lesson-1-lidar-sensor/examples'
-EXE_L2 = 'lesson-2-object-detection/exercises/starter'
-EXA_L2 = 'lesson-2-object-detection/examples'
+EXE_L1 = '/home/eugenio.collado@AEROESPACIAL.SENER/Documents/UDACTITY-SELF_DRIVING_CAR_ENGINEER/3.SENSOR_FUSION/EXERCISES/nd013-c2-fusion-exercises-main/lesson-1-lidar-sensor/exercises/starter'
+EXA_L1 = '/home/eugenio.collado@AEROESPACIAL.SENER/Documents/UDACTITY-SELF_DRIVING_CAR_ENGINEER/3.SENSOR_FUSION/EXERCISES/nd013-c2-fusion-exercises-main/lesson-1-lidar-sensor/examples'
+EXE_L2 = '/home/eugenio.collado@AEROESPACIAL.SENER/Documents/UDACTITY-SELF_DRIVING_CAR_ENGINEER/3.SENSOR_FUSION/EXERCISES/nd013-c2-fusion-exercises-main/lesson-2-object-detection/exercises/starter'
+EXA_L2 = '/home/eugenio.collado@AEROESPACIAL.SENER/Documents/UDACTITY-SELF_DRIVING_CAR_ENGINEER/3.SENSOR_FUSION/EXERCISES/nd013-c2-fusion-exercises-main/lesson-2-object-detection/examples'
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXE_L1)))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXA_L1)))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXE_L2)))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, EXA_L2)))
 
 # import functions from individual exercise files
-import l2_examples
-import l2_exercises
+#import l2_examples
+#import l2_exercises
 import l1_examples
 import l1_exercises
 
@@ -103,7 +103,7 @@ while True:
         lidar_name = dataset_pb2.LaserName.TOP
 
         # Exercise C1-3-1 : print no. of vehicles
-        # l1_exercises.print_no_of_vehicles(frame) 
+        l1_exercises.print_no_of_vehicles(frame) 
 
         # Example C1-3-2 : display camera image
         # l1_examples.display_image(frame)

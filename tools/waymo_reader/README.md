@@ -1,3 +1,4 @@
+If you encounter problems with protobuf version, one possible solution is to type this into terminal before running basic_loop.file: "export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python"
 # Simple Waymo Open Dataset Reader
 
 This is a simple file reader for the [Waymo Open Dataset](https://waymo.com/open/) which does not depend on TensorFlow and Bazel. The main goal is to be able to quickly integrate Waymo’s dataset with other deep learning frameworks without having to pull tons of dependencies. It does not aim to replace the [whole framework](https://github.com/waymo-research/waymo-open-dataset), especially the evaluation metrics that they provide.
