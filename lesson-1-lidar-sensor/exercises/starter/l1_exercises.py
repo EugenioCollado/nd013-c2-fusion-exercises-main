@@ -41,12 +41,26 @@ def vis_intensity_channel(frame, lidar_name):
 def print_pitch_resolution(frame, lidar_name):
 
     print("Exercise C1-5-2")
+
     # load range image
-        
+    lidar = [obj for obj in frame.lasers if obj.name == lidar_name][0] # get laser data structure from frame
+    ri = []
+    if len(lidar.ri_return1.range_image_compressed) > 0: # use first response
+        ri = dataset_pb2.MatrixFloat()
+        ri.ParseFromString(zlib.decompress(lidar.ri_return1.range_image_compressed))
+        ri = np.array(ri.data).reshape(ri.shape.dims)
+    print(ri.shape[0])
+
     # compute vertical field-of-view from lidar calibration 
+    # get lidar calibration data
+    calib_lidar = [obj for obj in frame.context.laser_calibrations if obj.name == lidar_name][0]
+    # compute vertical field of view (vfov) in rad
+    vfov_rad = calib_lidar.beam_inclination_max - calib_lidar.beam_inclination_min
+    # compute and print vfov in degrees
+    print(vfov_rad*180/np.pi)
 
     # compute pitch resolution and convert it to angular minutes
-
+    print(((vfov_rad*180/np.pi)/ri.shape[0])*60)
 
 # Exercise C1-3-1 : print no. of vehicles
 def print_no_of_vehicles(frame):
